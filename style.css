@@ -1,0 +1,137 @@
+/* --- GERAL E FUNDO GRADIENTE --- */
+body {
+    /* Nova fonte, mais moderna */
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #0c0a1a; /* Cor de fundo para navegadores antigos */
+    background-image: linear-gradient(160deg, #1e1b4b 0%, #0c0a1a 100%);
+    color: #f8fafc;
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.links-container {
+    width: 100%;
+    max-width: 480px;
+    flex-grow: 1;
+}
+
+/* --- CABEÇALHO E PERFIL --- */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    /* Borda com gradiente */
+    border: 3px solid transparent;
+    background: linear-gradient(#0c0a1a, #0c0a1a) padding-box,
+                linear-gradient(135deg, #4f46e5, #ec4899) border-box;
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.3);
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+
+/* --- BOTÕES COM EFEITO "GLASSMORPHISM" --- */
+.link-button {
+    /* Efeito de vidro */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    color: #f8fafc;
+    margin: 15px 0;
+    padding: 18px 25px; /* Aumenta o padding para melhor toque */
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    /* Layout Flex: Ícone à esquerda, texto centralizado */
+    display: flex;
+    align-items: center;
+}
+
+.link-button:hover {
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.2);
+}
+
+.link-button i {
+    font-size: 1.3rem;
+    color: #a78bfa; /* Cor de destaque para os ícones */
+}
+
+/* A mágica do layout: o texto cresce e se centraliza */
+.link-button .button-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* --- DROPDOWN DO PORTFÓLIO --- */
+#portfolio-toggle {
+    cursor: pointer;
+}
+
+#arrow {
+    margin-left: auto; /* Empurra a seta para a direita */
+    transition: transform 0.3s ease;
+}
+
+#arrow.open {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.dropdown-content.show {
+    max-height: 350px;
+}
+
+.portfolio-item {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #cbd5e1;
+    padding: 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.portfolio-item:hover {
+    background-color: rgba(79, 70, 229, 0.3);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* --- RODAPÉ --- */
+.footer {
+    margin-top: 40px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Remove a margem inferior do botão de portfólio para "colar" com o dropdown */
+#portfolio-toggle {
+    margin-bottom: 0px;
+
+}
